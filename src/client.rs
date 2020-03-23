@@ -1,3 +1,5 @@
+//! Client represents a bitbucket server client.
+
 pub struct Client<'a> {
     pub token: &'a str,
     pub disable_ssl: bool,

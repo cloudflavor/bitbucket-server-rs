@@ -4,3 +4,4 @@
 //! Atlassian Bitbucket server.
 
 pub mod client;
+pub mod repos;
