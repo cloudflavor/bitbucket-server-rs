@@ -13,10 +13,10 @@ impl<'a> Client<'a> {
         api_url: &'a str,
     ) -> Result<Self, ()> {
         Ok(Self {
-            token: token,
-            skip_ssl_verification: skip_ssl_verification,
-            disable_ssl: disable_ssl,
-            api_url: api_url,
+            token,
+            skip_ssl_verification,
+            disable_ssl,
+            api_url,
         })
     }
 }
