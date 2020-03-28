@@ -1,25 +1,28 @@
 //! Client represents a bitbucket server client.
 
-pub struct Client<'a> {
-    pub token: &'a str,
+pub struct Client {
+    pub token: String,
     pub disable_ssl: bool,
     pub skip_ssl_verification: bool,
-    pub api_url: &'a str,
+    pub api_url: String,
 }
 
-impl<'a> Client<'a> {
+impl Client {
     pub fn new(
-        token: &'a str,
+        token: String,
         skip_ssl_verification: bool,
         disable_ssl: bool,
-        api_url: &'a str,
-    ) -> Result<Self, ()> {
-        Ok(Self {
+        api_url: String,
+    ) -> Self {
+        Self {
             token,
             skip_ssl_verification,
             disable_ssl,
             api_url,
-        })
+        }
+    }
+    pub async fn build<B>(self, builder: B) -> Self {
+        self
     }
 }
 
@@ -28,6 +31,11 @@ mod tests {
     use super::Client;
     #[test]
     fn test_new_client() {
-        let test_client = Client::new("123123", false, false, "http://stash.company.com");
+        let test_client = Client::new(
+            "123123".to_string(),
+            false,
+            false,
+            "http://stash.company.com".to_string(),
+        );
     }
 }

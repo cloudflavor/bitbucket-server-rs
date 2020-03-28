@@ -1,1 +1,3 @@
-//! Repos contain the functionality for manipulating repositories.
+pub mod comments;
+
+pub struct Repo {}
