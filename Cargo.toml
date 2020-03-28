@@ -1,6 +1,6 @@
 [package]
 name = "bitbucket"
-version = "0.1.0-alpha"
+version = "0.1.1-alpha"
 authors = ["Victor Palade <victor@cloudflavor.io>"]
 edition = "2018"
 readme = "README.md"

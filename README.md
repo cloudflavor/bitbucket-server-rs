@@ -1,6 +1,7 @@
 # bitbucket-rs
 
 NOTE: _work-in-progress_ async rust bindings for bitbucket server.
+This is published so that the name is reserved for use on crates.io.
 
 Async Bitbucket server bindings for Rust.
 
