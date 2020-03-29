@@ -1,20 +1,46 @@
 //! bitbucket-rs
 //!
-//! Bitbucket is an async library that provides Rust bindings to
-//! Atlassian Bitbucket server (formerly known as Stash).
+//! Bitbucket is an async library that provides Rust bindings for
+//! the [Core API Atlassian Bitbucket server](https://docs.atlassian.com/bitbucket-server/rest/7.1.0/bitbucket-rest.html)
+//!  (formerly known as Stash).  
+//!
+//!  For now only the main resources are covered in this library.
+//!
+//!  # Examples:
+//!
+//! ```rust
+//! extern crate bitbucket;
+//! use bitbucket::prelude::*;
+//! use bitbucket::client::Client;
+//!
+//!
+//! #[tokio::main]
+//! async fn main() -> Result<(), Box<dyn std::error::Error>> {
+//!    let client = Client::new(
+//!        "my_token".to_string(),
+//!        "http://bitbucket.company.com".to_string(),
+//!         false,
+//!         false,
+//!     );
+//!     let project = client
+//!         .projects()
+//!         .get("my_project")
+//!         .await
+//!         .unwrap();
+//!     Ok(())
+//! }
+//! ```
 
 #[macro_use]
 extern crate serde;
 
+pub(crate) mod builder;
 pub mod client;
+pub mod prelude;
 pub mod resources;
 
 pub use resources::comments;
 pub use resources::projects;
+pub use resources::pullrequests;
 pub use resources::repositories;
-
-pub mod prelude {
-    pub use crate::resources::comments::Comment;
-    pub use crate::resources::projects::Project;
-    pub use crate::resources::repositories::Repository;
-}
+pub use resources::webhooks;
