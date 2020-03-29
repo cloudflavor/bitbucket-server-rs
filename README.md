@@ -3,8 +3,6 @@
 NOTE: _work-in-progress_ async rust bindings for bitbucket server.
 This is published so that the name is reserved for use on crates.io.
 
-Async Bitbucket server bindings for Rust.
-
 ![Rust](https://github.com/cloudflavor/bitbucket-rs/workflows/Rust/badge.svg?branch=master&event=push)
 
 Build and read the documentation locally.

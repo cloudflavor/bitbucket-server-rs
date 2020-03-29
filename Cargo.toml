@@ -8,6 +8,7 @@ description = "Async bitbucket server bindings"
 homepage = "https://github.com/cloudflavor/bitbucket-rs"
 repository = "https://github.com/cloudflavor/bitbucket-rs"
 license-file = "LICENSE"
+documentation = "https://docs.rs/crate/bitbucket"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
