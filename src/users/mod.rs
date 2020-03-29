@@ -1,3 +1,3 @@
-struct Users<'a> {
-    endpoint: &'a str,
+pub struct Users {
+    endpoint: String,
 }

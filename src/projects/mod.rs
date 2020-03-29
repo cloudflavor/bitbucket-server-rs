@@ -1,12 +1,11 @@
-#[derive(Debug)]
-pub struct Repos {
+pub struct Projects {
     endpoint: String,
 }
 
-impl Repos {
-    pub fn new() -> Repos {
-        Repos {
-            endpoint: "/repos".to_string(),
+impl Projects {
+    pub fn new() -> Projects {
+        Projects {
+            endpoint: "/projects".to_string(),
         }
     }
 }

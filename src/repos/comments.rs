@@ -1,3 +1,3 @@
-struct Comments<'a> {
-    endpoint: &'a str,
+pub struct Comments {
+    endpoint: String,
 }

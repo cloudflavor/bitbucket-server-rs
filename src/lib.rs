@@ -5,4 +5,5 @@
 
 pub mod client;
 pub mod projects;
+pub mod repos;
 pub mod users;

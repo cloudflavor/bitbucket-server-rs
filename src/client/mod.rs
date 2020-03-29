@@ -21,9 +21,6 @@ impl Client {
             api_url,
         }
     }
-    pub async fn build<B>(self, builder: B) -> Self {
-        self
-    }
 }
 
 #[cfg(test)]
