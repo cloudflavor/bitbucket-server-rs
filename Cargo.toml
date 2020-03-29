@@ -12,7 +12,7 @@ documentation = "https://docs.rs/crate/bitbucket"
 
 edition = "2018"
 keywords = ["bitbucket", "atlassian", "stash", "bitbucket-server"]
-categories =["web-programming::http-client"]
+categories =["web-programming::http-client", "api-bindings"]
 
 [badges]
 maintenance = { status = "actively-developed" }
