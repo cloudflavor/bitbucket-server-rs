@@ -2,7 +2,7 @@
 
 use crate::prelude::*;
 
-#[derive(Serialize, Deserialize)]
+#[derive(Serialize, Deserialize, Default)]
 pub struct Client {
     pub token: String,
     pub disable_ssl: bool,
@@ -13,34 +13,23 @@ pub struct Client {
 impl Client {
     pub fn new(
         token: String,
+        api_url: String,
         skip_ssl_verification: bool,
         disable_ssl: bool,
-        api_url: String,
     ) -> Self {
         Self {
             token,
+            api_url,
             skip_ssl_verification,
             disable_ssl,
-            api_url,
         }
     }
-    pub async fn projects(&self) -> Project {
-        Project::new()
+    pub fn projects(self) -> Project {
+        Project::new(self)
     }
 
-    pub async fn repositories(&self) -> Repository {
-        Repository::new()
-    }
-}
-
-impl Default for Client {
-    fn default() -> Client {
-        Client {
-            api_url: "".to_string(),
-            disable_ssl: false,
-            skip_ssl_verification: false,
-            token: "".to_string(),
-        }
+    pub fn repositories(self) -> Repository {
+        Repository::new(self)
     }
 }
 

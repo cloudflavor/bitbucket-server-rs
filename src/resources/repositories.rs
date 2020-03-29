@@ -1,14 +1,36 @@
-pub struct Repository {}
+use crate::client::Client;
+use crate::prelude::*;
 
-impl Repository {
-    pub fn new() -> Repository {
-        Repository {}
-    }
+#[derive(Serialize, Deserialize, Default)]
+pub struct Repository {
+    endpoint: String,
+    client: Client,
 }
 
-impl Default for Repository {
-    fn default() -> Repository {
-        Repository {}
+impl Repository {
+    pub fn new(client: Client) -> Repository {
+        let endpoint = format!("{}/{}", &client.api_url, "repos");
+        Repository { endpoint, client }
+    }
+
+    pub fn with_project(self, _project: Project) -> Self {
+        self
+    }
+
+    pub fn get(self, _repository: &str) -> Result<Self> {
+        Ok(self)
+    }
+
+    pub fn comments(self) -> Comment {
+        Comment::new(self.client)
+    }
+
+    pub fn create(self, _repository: &str) -> Result<()> {
+        Ok(())
+    }
+
+    pub fn delete(self, _repository: &str) -> Result<()> {
+        Ok(())
     }
 }
 
