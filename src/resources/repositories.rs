@@ -17,7 +17,7 @@ impl Repository {
         self
     }
 
-    pub fn get(self, _repository: &str) -> Result<Self> {
+    pub async fn get(self, _repository: &str) -> Result<Self> {
         Ok(self)
     }
 
@@ -25,11 +25,19 @@ impl Repository {
         Comment::new(self.client)
     }
 
-    pub fn create(self, _repository: &str) -> Result<()> {
+    pub fn webhooks(self) -> WebHook {
+        WebHook::new(self.client)
+    }
+
+    pub fn pull_requests(self) -> PullRequest {
+        PullRequest::new(self.client)
+    }
+
+    pub async fn create(self, _repository: &str) -> Result<()> {
         Ok(())
     }
 
-    pub fn delete(self, _repository: &str) -> Result<()> {
+    pub async fn delete(self, _repository: &str) -> Result<()> {
         Ok(())
     }
 }

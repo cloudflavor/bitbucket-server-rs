@@ -12,23 +12,29 @@ impl Comment {
         let endpoint = format!("{}/{}", client.api_url, "comments");
         Comment { endpoint, client }
     }
+
     pub fn with_repo(self, _repo: Repository) -> Result<Self> {
         Ok(self)
     }
-    pub fn get(self, _comment: &str) -> Result<Self> {
+
+    pub async fn get(self, _comment: &str) -> Result<Self> {
         Ok(self)
     }
 
-    pub fn list(self) -> Result<Vec<Self>> {
+    pub async fn list(self) -> Result<Vec<Self>> {
         Ok(vec![self])
     }
 
-    pub fn delete(self, _comment: &str) -> Result<Self> {
-        Ok(self)
+    pub async fn delete(self, _comment: &str) -> Result<()> {
+        Ok(())
     }
 
-    pub fn create(self, _comment: &str) -> Result<Self> {
-        Ok(self)
+    pub async fn create(self, _comment: &str) -> Result<()> {
+        Ok(())
+    }
+
+    pub async fn update(self, _pullrequest: &str) -> Result<()> {
+        Ok(())
     }
 }
 

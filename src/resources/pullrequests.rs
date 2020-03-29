@@ -9,11 +9,29 @@ pub struct PullRequest {
 
 impl PullRequest {
     pub fn new(client: Client) -> PullRequest {
-        let endpoint = format!("{}/{}", &client.api_url, "pull-requests");
-        PullRequest { endpoint, client }
+        PullRequest {
+            endpoint: "pull-request".to_string(),
+            client,
+        }
     }
 
-    pub fn get(self, _pullrequest: &str) -> Result<Self> {
+    pub async fn get(self, _pullrequest: &str) -> Result<Self> {
+        Ok(self)
+    }
+
+    pub async fn list(self, _pullrequest: &str) -> Result<Self> {
+        Ok(self)
+    }
+
+    pub async fn delete(self, _pullrequest: &str) -> Result<Self> {
+        Ok(self)
+    }
+
+    pub async fn create(self, _pullrequest: &str) -> Result<Self> {
+        Ok(self)
+    }
+
+    pub async fn update(self, _pullrequest: &str) -> Result<Self> {
         Ok(self)
     }
 }

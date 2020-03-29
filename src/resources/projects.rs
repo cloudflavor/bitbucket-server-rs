@@ -27,6 +27,10 @@ impl Project {
     pub async fn create(self, _project: &str) -> Result<()> {
         Ok(())
     }
+
+    pub async fn update(self, _project: &str) -> Result<()> {
+        Ok(())
+    }
 }
 
 #[cfg(test)]
