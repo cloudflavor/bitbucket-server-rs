@@ -2,7 +2,7 @@
 
 use crate::prelude::*;
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default, Debug)]
 pub struct Client {
     pub token: String,
     pub disable_ssl: bool,

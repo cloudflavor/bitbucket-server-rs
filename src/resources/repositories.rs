@@ -1,7 +1,7 @@
 use crate::client::Client;
 use crate::prelude::*;
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default, Debug)]
 pub struct Repository {
     endpoint: String,
     client: Client,

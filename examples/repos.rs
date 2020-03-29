@@ -12,7 +12,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         false,
         false,
     );
-    let proj = Project::new(client);
-    proj.get("my_repo").await.unwrap();
+    let proj = Project::new(client).get("my_project").await?;
+    println!("{:?}", proj);
     Ok(())
 }

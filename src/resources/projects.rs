@@ -1,7 +1,7 @@
 use crate::client::Client;
 use crate::prelude::Result;
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default, Debug)]
 pub struct Project {
     endpoint: String,
     client: Client,

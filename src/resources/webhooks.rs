@@ -1,7 +1,7 @@
 use crate::client::Client;
 use crate::prelude::{Repository, Result};
 
-#[derive(Serialize, Deserialize, Default)]
+#[derive(Serialize, Deserialize, Default, Debug)]
 pub struct WebHook {
     endpoint: String,
     client: Client,
