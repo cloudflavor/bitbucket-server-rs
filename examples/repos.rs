@@ -1,19 +1,17 @@
+extern crate bitbucket;
 extern crate tokio;
 
-extern crate bitbucket;
-
 use bitbucket::client::Client;
-use bitbucket::projects::Repos;
+use bitbucket::repos::Repositories as repos;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let local_client = Client::new(
-        "test".to_string(),
+    let client = Client::new(
+        "my_token".to_string(),
         false,
         false,
         "http://bitbucket.company.com".to_string(),
     );
-    let projects = Repos::new();
-    let projects = local_client.build(projects);
+    let repos = repos::build_from_client(client);
     Ok(())
 }
