@@ -40,7 +40,7 @@ mod tests {
 
     #[tokio::test]
     async fn test_get_project() {
-        let c = Client::new("token".to_string(), "api".to_string(), false, false);
+        let c = Client::new("token".to_string(), "api".to_string(), false);
         let p = Project::new(c);
         p.get("my_project").await.unwrap();
     }

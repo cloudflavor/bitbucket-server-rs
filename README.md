@@ -29,7 +29,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         "my_token".to_string(),
         "http://bitbucket.company.com".to_string(),
         false,
-        false,
     );
     let proj = Project::new(client).get("my_project").await?;
     println!("{:?}", proj);

@@ -21,7 +21,6 @@
 //!         "my_token".to_string(),
 //!         "http://bitbucket.company.com".to_string(),
 //!         false,
-//!         false,
 //!     );
 //!     let proj = Project::new(client).get("my_project").await?;
 //!     println!("{:?}", proj);
@@ -31,6 +30,7 @@
 
 #[macro_use]
 extern crate serde;
+extern crate hyper;
 
 pub(crate) mod builder;
 pub mod client;

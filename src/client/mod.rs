@@ -6,21 +6,14 @@ use crate::prelude::*;
 pub struct Client {
     pub token: String,
     pub disable_ssl: bool,
-    pub skip_ssl_verification: bool,
     pub api_url: String,
 }
 
 impl Client {
-    pub fn new(
-        token: String,
-        api_url: String,
-        skip_ssl_verification: bool,
-        disable_ssl: bool,
-    ) -> Self {
+    pub fn new(token: String, api_url: String, disable_ssl: bool) -> Self {
         Self {
             token,
             api_url,
-            skip_ssl_verification,
             disable_ssl,
         }
     }
