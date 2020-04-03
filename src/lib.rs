@@ -10,16 +10,11 @@
 //!
 //! ```rust
 //! extern crate bitbucket;
-//! use bitbucket::prelude::*;
-//! use bitbucket::client::Client;
-//!
-//!
-//! extern crate bitbucket;
 //! extern crate tokio;
-
-//! use bitbucket::client::Client;
+//!
 //! use bitbucket::prelude::*;
-
+//! use bitbucket::client::Client;
+//!
 //! #[tokio::main]
 //! async fn main() -> Result<(), Box<dyn std::error::Error>> {
 //!     let client = Client::new(
