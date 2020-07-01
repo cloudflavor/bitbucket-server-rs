@@ -14,23 +14,18 @@ impl PullRequest {
             client,
         }
     }
-
     pub async fn get(self, _pullrequest: &str) -> Result<Self> {
         Ok(self)
     }
-
     pub async fn list(self, _pullrequest: &str) -> Result<Self> {
         Ok(self)
     }
-
     pub async fn delete(self, _pullrequest: &str) -> Result<Self> {
         Ok(self)
     }
-
     pub async fn create(self, _pullrequest: &str) -> Result<Self> {
         Ok(self)
     }
-
     pub async fn update(self, _pullrequest: &str) -> Result<Self> {
         Ok(self)
     }

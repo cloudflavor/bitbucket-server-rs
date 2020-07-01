@@ -15,19 +15,15 @@ impl Project {
     pub async fn get(self, _project: &str) -> Result<Self> {
         Ok(self)
     }
-
     pub async fn list(self) -> Result<Vec<Self>> {
         Ok(vec![self])
     }
-
     pub async fn delete(self, _project: &str) -> Result<()> {
         Ok(())
     }
-
     pub async fn create(self, _project: &str) -> Result<()> {
         Ok(())
     }
-
     pub async fn update(self, _project: &str) -> Result<()> {
         Ok(())
     }

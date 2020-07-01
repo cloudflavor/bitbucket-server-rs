@@ -12,31 +12,24 @@ impl Repository {
         let endpoint = format!("{}/{}", &client.api_url, "repos");
         Repository { endpoint, client }
     }
-
     pub fn with_project(self, _project: Project) -> Self {
         self
     }
-
     pub async fn get(self, _repository: &str) -> Result<Self> {
         Ok(self)
     }
-
-    pub fn comments(self) -> Comment {
+    pub fn comment(self) -> Comment {
         Comment::new(self.client)
     }
-
-    pub fn webhooks(self) -> WebHook {
+    pub fn webhook(self) -> WebHook {
         WebHook::new(self.client)
     }
-
-    pub fn pull_requests(self) -> PullRequest {
+    pub fn pull_request(self) -> PullRequest {
         PullRequest::new(self.client)
     }
-
     pub async fn create(self, _repository: &str) -> Result<()> {
         Ok(())
     }
-
     pub async fn delete(self, _repository: &str) -> Result<()> {
         Ok(())
     }

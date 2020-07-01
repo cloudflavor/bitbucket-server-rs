@@ -1,5 +1,5 @@
 //! Client represents a bitbucket server client.
-
+use crate::builder::Builder;
 use crate::prelude::*;
 
 #[derive(Serialize, Deserialize, Default, Debug)]
@@ -7,6 +7,7 @@ pub struct Client {
     pub token: String,
     pub disable_ssl: bool,
     pub api_url: String,
+    builder: Builder,
 }
 
 impl Client {
@@ -20,7 +21,6 @@ impl Client {
     pub fn projects(self) -> Project {
         Project::new(self)
     }
-
     pub fn repositories(self) -> Repository {
         Repository::new(self)
     }
